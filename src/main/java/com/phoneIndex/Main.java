@@ -9,8 +9,7 @@ public class Main {
 
 		PhoneIndex phoneIndex = new PhoneIndex("contacts.txt");
 
-		Scanner input = new Scanner(System.in);
-		try {
+		try (Scanner input = new Scanner(System.in)) {
 			Contact contact = new Contact();
 
 			String firstName = getFirstName(input);
@@ -22,19 +21,25 @@ public class Main {
 			System.out.println("Enter Your Phone Number:");
 			contact.setPhoneNumber(input.next());
 
-			// added contact to Index
+			// ِِ---- Add contact to Index ----
 			phoneIndex.addContact(contact);
 			System.out.println(("Contact saved successfully. Details: " + contact));
 
 			// ---- DELETE CONTACT ----
 			phoneIndex.removeContact("new1 contact1");
+			System.out.println("Contact Deleted");
 
-			// Print all contacts
+			// ---- Print all contacts ----
 			phoneIndex.printAllContacts();
 			System.out.println(contact);
 
-		} finally {
-			input.close();
+			// ---- Get contact details ----
+			phoneIndex.getContact("Redi", "School");
+			System.out.println("Get contact details " + phoneIndex.getContact("Redi", "School"));
+
+			// ---- Total contacts number ----
+			phoneIndex.getNumberOfContacts();
+			System.out.println("Total Number of Contacts = " + phoneIndex.getNumberOfContacts());
 		}
 	}
 

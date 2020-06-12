@@ -14,8 +14,12 @@ public class PhoneIndex {
 		load();
 	}
 
+	public PhoneIndex() {
+
+	}
+
 	public void addContact(Contact contact) {
-		// added and save contact to the list
+		// add and save contact to the list
 		contacts.add(contact);
 		save();
 	}
