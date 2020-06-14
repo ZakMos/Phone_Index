@@ -16,10 +16,10 @@ class PhoneIndexTest {
 	@Test
 	void addContact() {
 		Contact contact = new Contact();
-		 contact.setFirstName("a");
-		 contact.setLastName("b");
+//		 contact.setFirstName("a");
+//		 contact.setLastName("b");
 
-		phoneIndex.addContact(contact);
+//		phoneIndex.addContact(contact);
 
 		Assertions.assertEquals(1, phoneIndex.getNumberOfContacts());
 	}
